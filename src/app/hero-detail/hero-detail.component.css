@@ -1,0 +1,15 @@
+.backBtn{
+    color: #333;
+    background-color: #eee;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    padding: 4px 8px 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.backBtn:hover{
+    color: white;
+    background-color: #42545C;
+}

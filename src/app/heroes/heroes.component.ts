@@ -18,14 +18,14 @@ export class HeroesComponent implements OnInit {
 
   heroes: Hero[]=[];
 
-  selectedHero? : Hero;
+  /*selectedHero? : Hero;
 
   //why '?' is here?
 
   onSelect(hero : Hero): void{
     this.selectedHero = hero;
-    this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`);
-  }
+    this.messageService.add(`Selected hero id=${hero.id}`);
+  }*/
   
   /*onSelect(hero : Hero){
     this.selectedHero = hero;
