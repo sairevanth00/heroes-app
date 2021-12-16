@@ -3,6 +3,7 @@
     background-color: #eee;
     margin-top: 12px;
     margin-bottom: 12px;
+    margin-right: 5px;
     padding: 4px 8px 4px 8px;
     border-radius: 4px;
     cursor: pointer;
@@ -12,4 +13,7 @@
 .backBtn:hover{
     color: white;
     background-color: #42545C;
+}
+.btnsCon{
+    display: flex;
 }
