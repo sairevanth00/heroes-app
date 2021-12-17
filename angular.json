@@ -107,3 +107,7 @@
   },
   "defaultProject": "angular-tour"
 }
+
+//My View -------------------------------------------------------------
+
+// file is the primary configuration file for an Angular project. It is a root level of Angular work space

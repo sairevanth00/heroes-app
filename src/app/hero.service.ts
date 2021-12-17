@@ -47,7 +47,12 @@ export class HeroService {
 
   getHero(id : Number) : Observable<Hero>{
     const url = `${this.heroesUrl}/${id}`;
-    //const hero = HEROES.find(h => h.id === id)!;//why we are putting '!' here?
+    //const hero = HEROES.find(h => h.id === id)!; //why we are putting '!' here?
+    /*Like getHeroes(), getHero() has an asynchronous signature.
+      It returns a mock hero as an Observable, using the RxJS of() function.
+      
+      You'll be able to re-implement ***(getHero() as a real Http request without 
+      having to change the HeroDetailComponent) that calls it. */
     this.messageService.add(`HeroService: fetched hero id=${id}`)
     return this.http.get<Hero>(url).pipe(
       tap(_ => this.log(`fetched hero id=${id}`)),
@@ -78,6 +83,20 @@ export class HeroService {
     return this.http.delete<Hero>(url, this.httpOptions).pipe(
       tap(_ => this.log(`deleted hero id=${id}`)),
       catchError(this.handleError<Hero>('deleteHero'))
+    );
+}
+
+/* GET heroes whose name contains search term */
+  searchHeroes(term: string): Observable<Hero[]> {
+    if (!term.trim()) {
+      // if not search term, return empty hero array.
+      return of([]);
+    }
+    return this.http.get<Hero[]>(`${this.heroesUrl}/?name=${term}`).pipe(
+      tap(x => x.length ?
+        this.log(`found heroes matching "${term}"`) :
+        this.log(`no heroes matching "${term}"`)),
+      catchError(this.handleError<Hero[]>('searchHeroes', []))
     );
 }
 
