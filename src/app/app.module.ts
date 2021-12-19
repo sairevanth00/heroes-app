@@ -14,6 +14,8 @@ import { InMemoryDataService } from './in-memory-data.service';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HeroesNavComponent } from './heroes-nav/heroes-nav.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
+import { MessageService } from './message.service';
+import { HeroService } from './hero.service'; 
 
 @NgModule({
   declarations: [
@@ -31,7 +33,6 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    HttpClientModule,
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
@@ -39,7 +40,7 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
       InMemoryDataService, { dataEncapsulation: false }
     )
   ],
-  //providers: [],
+  providers: [MessageService,InMemoryDataService,HeroService],
   bootstrap: [AppComponent]
 })
 
